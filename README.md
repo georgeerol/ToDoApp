@@ -1,7 +1,7 @@
 # Basic Todo Management Application
 This project is a Basic Todo Management Application that use:
-* *Front End*:React(Frontend View FrameWorks),BootStrap
-* *Back End*: Spring Boot(REST API Framework), Spring Security(Authentication and Authorization-JWT) and Maven(Dependencies Management).
+* **Front End**:React(Frontend View FrameWorks),BootStrap
+* **Back End**: Spring Boot(REST API Framework), Spring Security(Authentication and Authorization-JWT) and Maven(Dependencies Management).
 # TO DO App Front End
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

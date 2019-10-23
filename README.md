@@ -83,3 +83,115 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 # TO DO APP Back End
+
+### Request URLs and Examples
+
+#### Common Headers
+
+```
+Origin - http://localhost:4200
+Content-Type - application/json
+Authorization 
+- Bearer *** or
+- Basic *****
+```
+
+
+#### Retrieve all todos for a user 
+
+- GET - http://localhost:8087/users/georgeerol/todos
+
+```json
+[
+  {
+    id: 1,
+    username: "georgeerol",
+    description: "Learn to Dance 2",
+    targetDate: "2018-11-09T12:05:18.647+0000",
+   : false,
+  },
+  {
+    id: 2,
+    username: "georgeerol",
+    description: "Learn about Microservices 2",
+    targetDate: "2018-11-09T12:05:18.647+0000",
+   : false,
+  },
+  {
+    id: 3,
+    username: "georgeerol",
+    description: "Learn about React",
+    targetDate: "2018-11-09T12:05:18.647+0000",
+   : false,
+  },
+]
+```
+
+#### Retrieve a specific todo
+
+- GET - http://localhost:8087/users/georgeerol/todos/1
+
+```
+{
+  id: 1,
+  username: "georgeerol",
+  description: "Learn to Dance 2",
+  targetDate: "2018-11-09T12:05:18.647+0000",
+ : false,
+}
+```
+
+#### Creating a new todo
+
+- POST to http://localhost:8087/users/georgeerol/todos with BODY of Request given below
+
+```
+{
+  "username": "georgeerol",
+  "description": "Learn to Drive a Car",
+  "targetDate": "2018-11-09T10:49:23.566+0000",
+  "done": false
+}
+```
+
+#### Updating a new todo
+
+- http://localhost:8087/users/georgeerol/todos/1 with BODY of Request given below
+
+```
+{
+  "id": 1
+  "username": "in28minutes",
+  "description": "Learn to Drive a Car",
+  "targetDate": "2018-11-09T10:49:23.566+0000",
+  "done": false
+}
+```
+
+#### Delete todo
+
+- DELETE to http://localhost:8087/users/georgeerol/todos/1
+
+### JWT Authenticate
+
+- POST to http://localhost:8087/authenticate
+
+
+```
+{
+  "username":"george",
+  "password":"password@!23@#!"
+}
+```
+
+Response
+
+```
+{
+"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW5nYSIsImV4cCI6MTU0MjQ3MjA3NCwiaWF0IjoxNTQxODY3Mjc0fQ.kD6UJQyxjSPMzAhoTJRr-Z5UL-FfgsyxbdseWQvk0fLi7eVXAKhBkWfj06SwH43sY_ZWBEeLuxaE09szTboefw"
+}
+```
+
+Other URLS
+- Refresh - http://localhost:8087/authenticate
+

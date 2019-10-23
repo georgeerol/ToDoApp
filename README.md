@@ -101,29 +101,29 @@ Authorization
 
 - GET - http://localhost:8087/users/georgeerol/todos
 
-```
+```json
 [
-  {
-    id: 1,
-    username: "georgeerol",
-    description: "Learn to Dance 2",
-    targetDate: "2018-11-09T12:05:18.647+0000",
-   : false,
-  },
-  {
-    id: 2,
-    username: "georgeerol",
-    description: "Learn about Microservices 2",
-    targetDate: "2018-11-09T12:05:18.647+0000",
-   : false,
-  },
-  {
-    id: 3,
-    username: "georgeerol",
-    description: "Learn about React",
-    targetDate: "2018-11-09T12:05:18.647+0000",
-   : false,
-  }
+    {
+        "id": 1,
+        "username": "GeorgeErol",
+        "description": "Learn to dance",
+        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "done": false
+    },
+    {
+        "id": 2,
+        "username": "GeorgeErol",
+        "description": "Learn about Micro Services ",
+        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "done": false
+    },
+    {
+        "id": 3,
+        "username": "GeorgeErol",
+        "description": "Learn about Angular",
+        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "done": false
+    }
 ]
 ```
 
@@ -131,13 +131,13 @@ Authorization
 
 - GET - http://localhost:8087/users/georgeerol/todos/1
 
-```
+```json
 {
-  id: 1,
-  username: "georgeerol",
-  description: "Learn to Dance 2",
-  targetDate: "2018-11-09T12:05:18.647+0000",
- : false,
+    "id": 1,
+    "username": "GeorgeErol",
+    "description": "Learn to dance",
+    "targetDate": "2019-10-23T17:48:38.096+0000",
+    "done": false
 }
 ```
 
@@ -145,7 +145,7 @@ Authorization
 
 - POST to http://localhost:8087/users/georgeerol/todos with BODY of Request given below
 
-```
+```json
 {
   "username": "georgeerol",
   "description": "Learn to Drive a Car",
@@ -158,9 +158,9 @@ Authorization
 
 - http://localhost:8087/users/georgeerol/todos/1 with BODY of Request given below
 
-```
+```json
 {
-  "id": 1
+  "id": 1,
   "username": "georgeerol",
   "description": "Learn to Drive a Car",
   "targetDate": "2018-11-09T10:49:23.566+0000",
@@ -177,7 +177,7 @@ Authorization
 - POST to http://localhost:8087/authenticate
 
 
-```
+```json
 {
   "username":"george",
   "password":"password@!23@#!"
@@ -186,7 +186,7 @@ Authorization
 
 Response
 
-```
+```json
 {
 "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW5nYSIsImV4cCI6MTU0MjQ3MjA3NCwiaWF0IjoxNTQxODY3Mjc0fQ.kD6UJQyxjSPMzAhoTJRr-Z5UL-FfgsyxbdseWQvk0fLi7eVXAKhBkWfj06SwH43sY_ZWBEeLuxaE09szTboefw"
 }

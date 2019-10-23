@@ -101,7 +101,7 @@ Authorization
 
 - GET - http://localhost:8087/users/georgeerol/todos
 
-```json
+```
 [
   {
     id: 1,
@@ -123,7 +123,7 @@ Authorization
     description: "Learn about React",
     targetDate: "2018-11-09T12:05:18.647+0000",
    : false,
-  },
+  }
 ]
 ```
 
@@ -161,7 +161,7 @@ Authorization
 ```
 {
   "id": 1
-  "username": "in28minutes",
+  "username": "georgeerol",
   "description": "Learn to Drive a Car",
   "targetDate": "2018-11-09T10:49:23.566+0000",
   "done": false

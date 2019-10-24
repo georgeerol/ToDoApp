@@ -7,6 +7,7 @@ This project is a Basic Todo Management Application that use:
    * Spring Boot(REST API Framework)
    * Spring Security(Authentication and Authorization-JWT)
    * Maven(Dependencies Management)
+   * Server(Apache Tomcat)
    
 ## Login Page   
 ![LoginPage](./Images/LoginPage.png)

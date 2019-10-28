@@ -129,7 +129,7 @@ Authorization
 
 #### Retrieve a specific todo
 
-- GET - http://localhost:8087/users/georgeerol/todos/1
+- GET - http://localhost:8087/users/georgeerol/todos/10001
 
 ```json
 {

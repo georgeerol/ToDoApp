@@ -21,6 +21,11 @@ class TodoDataService {
     //console.log('executed service')
     return axios.put(`${API_URL}/users/${name}/todos/${id}`, todo);
   }
+
+  createTodo(name, todo) {
+    //console.log('executed service')
+    return axios.post(`${API_URL}/users/${name}/todos/`, todo);
+  }
 }
 
 export default new TodoDataService();

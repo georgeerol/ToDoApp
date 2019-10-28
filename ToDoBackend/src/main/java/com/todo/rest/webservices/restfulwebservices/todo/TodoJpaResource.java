@@ -20,16 +20,13 @@ public class TodoJpaResource {
     @GetMapping("/users/{username}/todos")
     public List<Todo> getAllTodos(@PathVariable String username){
         return todoJpaRepository.findByUsername(username);
-        //return todoService.findAll();
     }
 
     @GetMapping("/users/{username}/todos/{id}")
     public Todo getTodo(@PathVariable String username, @PathVariable long id){
         return todoJpaRepository.findById(id).get();
-        //return todoService.findById(id);
     }
 
-    // DELETE /users/{username}/todos/{id}
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(
             @PathVariable String username, @PathVariable long id) {
@@ -40,8 +37,6 @@ public class TodoJpaResource {
     }
 
 
-    //Edit/Update a Todo
-    //PUT /users/{user_name}/todos/{todo_id}
     @PutMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Todo> updateTodo(
             @PathVariable String username,

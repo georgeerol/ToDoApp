@@ -128,7 +128,7 @@ Authorization
 
 #### Updating a new todo
 
-- http://localhost:8087/users/georgeerol/todos/1 with BODY of Request given below
+- http://localhost:8087/users/georgeerol/todos/10001 with BODY of Request given below
 
 ```json
 {
@@ -142,7 +142,8 @@ Authorization
 
 #### Delete todo
 
-- DELETE to http://localhost:8087/users/georgeerol/todos/1
+- DELETE to http://localhost:8087/users/georgeerol/todos
+
 
 ### JWT Authenticate
 

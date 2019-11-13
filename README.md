@@ -1,5 +1,5 @@
 # Basic Todo Management Application
-This project is a Basic Todo Management Application that use:
+This project is a Basic Todo Management Application that uses:
 * **Front End**
    * React(Front End View Framework)
    * BootStrap(Styling Pages)

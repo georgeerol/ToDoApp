@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ToDoApp {
 
 	public static void main(String[] args) {
-//		H2ServerConfiguration h2ServerConfiguration = new H2ServerConfiguration();
 		SpringApplication.run(ToDoApp.class, args);
 	}
 

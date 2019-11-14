@@ -1,4 +1,7 @@
 # Basic Todo Management Application
+[![Build Status](https://travis-ci.com/georgeerol/ToDoApp.svg?branch=master)](https://travis-ci.com/georgeerol/ToDoApp)
+
+
 This project is a Basic Todo Management Application that uses:
 * **Front End**
    * React(Front End View Framework)

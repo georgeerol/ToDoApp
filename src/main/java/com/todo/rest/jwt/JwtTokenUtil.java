@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.jwt;
+package com.todo.rest.jwt;
 
 /**
  * Created by George Fouche on 7/6/19.

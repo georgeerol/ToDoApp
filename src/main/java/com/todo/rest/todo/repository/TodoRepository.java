@@ -1,5 +1,6 @@
-package com.todo.rest.webservices.restfulwebservices.todo;
+package com.todo.rest.todo.repository;
 
+import com.todo.rest.todo.model.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Created by George Fouche on 10/25/19.
  */
 @Repository
-public interface TodoJpaRepository extends JpaRepository<Todo,Long>{
+public interface TodoRepository extends JpaRepository<Todo,Long>{
     List<Todo> findByUsername(String username);
 
 

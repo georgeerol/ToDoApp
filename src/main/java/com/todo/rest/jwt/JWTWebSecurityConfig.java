@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.jwt;
+package com.todo.rest.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

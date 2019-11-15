@@ -1,5 +1,7 @@
-package com.todo.rest.webservices.restfulwebservices.todo;
+package com.todo.rest.todo.controller;
 
+import com.todo.rest.todo.model.Todo;
+import com.todo.rest.todo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,27 +13,27 @@ import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class TodoJpaResource {
+public class TodoController {
 
     @Autowired
-    private TodoJpaRepository todoJpaRepository;
+    private TodoRepository todoRepository;
 
 
     @GetMapping("/users/{username}/todos")
     public List<Todo> getAllTodos(@PathVariable String username){
-        return todoJpaRepository.findByUsername(username);
+        return todoRepository.findByUsername(username);
     }
 
     @GetMapping("/users/{username}/todos/{id}")
     public Todo getTodo(@PathVariable String username, @PathVariable long id){
-        return todoJpaRepository.findById(id).get();
+        return todoRepository.findById(id).get();
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(
             @PathVariable String username, @PathVariable long id) {
 
-        todoJpaRepository.deleteById(id);
+        todoRepository.deleteById(id);
 
         return ResponseEntity.noContent().build();
     }
@@ -44,7 +46,7 @@ public class TodoJpaResource {
 
         todo.setUsername(username);
 
-        Todo todoUpdated = todoJpaRepository.save(todo);
+        Todo todoUpdated = todoRepository.save(todo);
 
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
@@ -55,7 +57,7 @@ public class TodoJpaResource {
 
         todo.setUsername(username);
 
-        Todo createdTodo = todoJpaRepository.save(todo);
+        Todo createdTodo = todoRepository.save(todo);
 
         //Location
         //Get current resource url

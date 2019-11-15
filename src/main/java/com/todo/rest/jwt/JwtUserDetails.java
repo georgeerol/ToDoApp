@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.jwt;
+package com.todo.rest.jwt;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;

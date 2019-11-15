@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.jwt;
+package com.todo.rest.jwt;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.jwt.resource;
+package com.todo.rest.jwt.resource;
 
 import java.io.Serializable;
 

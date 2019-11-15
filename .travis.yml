@@ -6,9 +6,5 @@ cache:
   directories:
   - "$HOME/.cache"
 
-deploy:
-  provider: script
-  script: "cp .travis.settings.xml $HOME/.m2/settings.xml"
-  skip_cleanup: true
-  on:
-    tags: true
+script:
+- ./mvnw clean install -B

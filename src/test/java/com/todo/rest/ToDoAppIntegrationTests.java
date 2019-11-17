@@ -54,24 +54,6 @@ class ToDoAppIntegrationTests {
         assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
     }
 
-
-//    @Test
-//    public void whenInvalidTodo_thenError() {
-//        String api = "http://localhost:" + port + "/users/georgeerol/todos";
-//        Todo todo = createRandomTodo();
-//        todo.setUsername(null);
-//        Response response = given().
-//                port(port).
-//                auth().oauth2(token).
-//                contentType(MediaType.APPLICATION_JSON_VALUE).
-//                body(todo).
-//                post(api);
-//        assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
-//    }
-
-
-
-
     private Todo createRandomTodo() {
         Todo todo = new Todo();
         todo.setUsername(randomAlphabetic(10));

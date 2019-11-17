@@ -1,6 +1,6 @@
 # Basic Todo Management Application
 [![Build Status](https://travis-ci.com/georgeerol/ToDoApp.svg?branch=master)](https://travis-ci.com/georgeerol/ToDoApp)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=georgeerol_ToDoAp&metric=alert_status)](https://sonarcloud.io/dashboard?id=georgeerol_ToDoAp)
 
 This project is a Basic Todo Management Application that uses:
 * **Front End**

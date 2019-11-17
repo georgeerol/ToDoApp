@@ -2,13 +2,6 @@ language: java
 jdk: openjdk8
 
 
-language: node_js
-node_js: node
-cache: npm
-script:
-  - npm test
-after_success:
-  - npm run coverage
 
 addons:
   sonarcloud:

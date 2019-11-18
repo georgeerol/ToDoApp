@@ -26,7 +26,7 @@ class ToDoAppIntegrationTests {
     private int port;
 
     @Value("${jwt.test.token}")
-    private  String token;
+    private String token;
 
 
     @Test
@@ -58,6 +58,27 @@ class ToDoAppIntegrationTests {
                 body(todo).
                 post(api);
         assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
+    }
+
+    @Test
+    public void whenUpdateTodo_thenUpdate() {
+        String api = "http://localhost:" + port + "/users/georgeerol/todos/10001";
+        Todo todo = createRandomTodo();
+        Response response = given().
+                port(port).
+                auth().oauth2(token).
+                contentType(MediaType.APPLICATION_JSON_VALUE).
+                body(todo).
+                put(api);
+        assertEquals(HttpStatus.OK.value(), response.getStatusCode());
+    }
+
+
+    @Test
+    public void whenDelete_ThenOK(){
+        String api = "http://localhost:" + port + "/users/georgeerol/todos/10002";
+        Response response = given().port(port).auth().oauth2(token).delete(api);
+        assertEquals(HttpStatus.OK.value(),response.getStatusCode());
     }
 
     private Todo createRandomTodo() {

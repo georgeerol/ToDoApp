@@ -11,7 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class TodoController {
 
@@ -20,12 +20,12 @@ public class TodoController {
 
 
     @GetMapping("/users/{username}/todos")
-    public List<Todo> getAllTodos(@PathVariable String username){
+    public List<Todo> getAllTodos(@PathVariable String username) {
         return todoRepository.findByUsername(username);
     }
 
     @GetMapping("/users/{username}/todos/{id}")
-    public Todo getTodo(@PathVariable String username, @PathVariable long id){
+    public Todo getTodo(@PathVariable String username, @PathVariable long id) {
         return todoRepository.findById(id).get();
     }
 
@@ -34,15 +34,14 @@ public class TodoController {
             @PathVariable String username, @PathVariable long id) {
 
         todoRepository.deleteById(id);
-
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
 
     @PutMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Todo> updateTodo(
             @PathVariable String username,
-            @PathVariable long id, @RequestBody Todo todo){
+            @PathVariable long id, @RequestBody Todo todo) {
 
         todo.setUsername(username);
 
@@ -53,7 +52,7 @@ public class TodoController {
 
     @PostMapping("/users/{username}/todos")
     public ResponseEntity<Void> createTodo(
-            @PathVariable String username, @RequestBody Todo todo){
+            @PathVariable String username, @RequestBody Todo todo) {
 
         todo.setUsername(username);
 
@@ -69,3 +68,5 @@ public class TodoController {
     }
 
 }
+
+

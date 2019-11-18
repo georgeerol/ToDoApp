@@ -1,6 +1,5 @@
 package com.todo.rest.todo.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +13,7 @@ import java.util.Date;
  * Created by George Fouche on 6/18/19.
  */
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Entity
 @Data

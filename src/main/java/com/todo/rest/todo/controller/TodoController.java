@@ -55,12 +55,7 @@ public class TodoController {
             @PathVariable String username, @RequestBody Todo todo) {
 
         todo.setUsername(username);
-
         Todo createdTodo = todoRepository.save(todo);
-
-        //Location
-        //Get current resource url
-        ///{id}
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(createdTodo.getId()).toUri();
 

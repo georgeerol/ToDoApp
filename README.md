@@ -108,10 +108,10 @@ Authorization
 
 ```json
 {
-    "id": 1,
-    "username": "GeorgeErol",
-    "description": "Learn to dance",
-    "targetDate": "2019-10-23T17:48:38.096+0000",
+    "id": 10001,
+    "username": "georgeerol",
+    "description": "Learn JPA",
+    "targetDate": "2019-11-18T08:00:00.000+0000",
     "done": false
 }
 ```

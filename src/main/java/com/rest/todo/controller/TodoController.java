@@ -1,5 +1,6 @@
 package com.rest.todo.controller;
 
+import com.rest.todo.exception.TodoNotFoundException;
 import com.rest.todo.model.Todo;
 import com.rest.todo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,28 +27,24 @@ public class TodoController {
 
     @GetMapping("/users/{username}/todos/{id}")
     public Todo getTodo(@PathVariable String username, @PathVariable long id) {
-        return todoRepository.findById(id).get();
+        return todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<Void> deleteTodo(
-            @PathVariable String username, @PathVariable long id) {
+    public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
 
+        todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
         todoRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
 
     @PutMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<Todo> updateTodo(
-            @PathVariable String username,
-            @PathVariable long id, @RequestBody Todo todo) {
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo) {
 
         todo.setUsername(username);
-
         Todo todoUpdated = todoRepository.save(todo);
-
-        return new ResponseEntity<Todo>(todo, HttpStatus.OK);
+        return new ResponseEntity<>(todoUpdated, HttpStatus.OK);
     }
 
     @PostMapping("/users/{username}/todos")

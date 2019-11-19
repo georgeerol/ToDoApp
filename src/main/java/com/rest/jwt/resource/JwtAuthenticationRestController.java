@@ -1,8 +1,7 @@
-package com.todo.rest.jwt.resource;
-import javax.servlet.http.HttpServletRequest;
+package com.rest.jwt.resource;
 
-import com.todo.rest.jwt.JwtTokenUtil;
-import com.todo.rest.jwt.JwtUserDetails;
+import com.rest.jwt.JwtTokenUtil;
+import com.rest.jwt.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -13,13 +12,9 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 /**

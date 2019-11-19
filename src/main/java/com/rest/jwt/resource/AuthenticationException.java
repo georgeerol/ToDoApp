@@ -1,4 +1,4 @@
-package com.todo.rest.jwt.resource;
+package com.rest.jwt.resource;
 
 /**
  * Created by George Fouche on 7/6/19.

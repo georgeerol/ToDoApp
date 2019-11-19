@@ -1,7 +1,7 @@
-package com.todo.rest;
+package com.rest;
 
 
-import com.todo.rest.todo.model.Todo;
+import com.rest.todo.model.Todo;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

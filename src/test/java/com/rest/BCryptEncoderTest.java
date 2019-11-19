@@ -1,4 +1,4 @@
-package com.todo.rest;
+package com.rest;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

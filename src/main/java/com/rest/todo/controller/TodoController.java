@@ -1,7 +1,7 @@
-package com.todo.rest.todo.controller;
+package com.rest.todo.controller;
 
-import com.todo.rest.todo.model.Todo;
-import com.todo.rest.todo.repository.TodoRepository;
+import com.rest.todo.model.Todo;
+import com.rest.todo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

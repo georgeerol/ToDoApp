@@ -1,4 +1,4 @@
-package com.todo.rest.todo.model;
+package com.rest.todo.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

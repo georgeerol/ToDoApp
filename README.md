@@ -79,24 +79,24 @@ Authorization
 ```json
 [
     {
-        "id": 1,
-        "username": "GeorgeErol",
-        "description": "Learn to dance",
-        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "id": 10001,
+        "username": "georgeerol",
+        "description": "Learn JPA",
+        "targetDate": "2019-11-18T08:00:00.000+0000",
         "done": false
     },
     {
-        "id": 2,
-        "username": "GeorgeErol",
-        "description": "Learn about Micro Services ",
-        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "id": 10002,
+        "username": "georgeerol",
+        "description": "Learn Data JPA",
+        "targetDate": "2019-11-18T08:00:00.000+0000",
         "done": false
     },
     {
-        "id": 3,
-        "username": "GeorgeErol",
-        "description": "Learn about Angular",
-        "targetDate": "2019-10-23T17:48:38.096+0000",
+        "id": 10003,
+        "username": "georgeerol",
+        "description": "Learn Microservices",
+        "targetDate": "2019-11-18T08:00:00.000+0000",
         "done": false
     }
 ]

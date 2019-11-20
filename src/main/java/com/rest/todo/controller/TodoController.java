@@ -1,8 +1,10 @@
 package com.rest.todo.controller;
 
+import com.rest.todo.dto.TodoDto;
 import com.rest.todo.exception.TodoNotFoundException;
 import com.rest.todo.model.Todo;
 import com.rest.todo.repository.TodoRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,17 +42,19 @@ public class TodoController {
 
 
     @PutMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo) {
-
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody TodoDto todoDto) {
+        Todo todo = new Todo();
+        BeanUtils.copyProperties(todoDto,todo);
         todo.setUsername(username);
         Todo todoUpdated = todoRepository.save(todo);
         return new ResponseEntity<>(todoUpdated, HttpStatus.OK);
     }
 
     @PostMapping("/users/{username}/todos")
-    public ResponseEntity<Void> createTodo(
-            @PathVariable String username, @RequestBody Todo todo) {
+    public ResponseEntity<Void> createTodo(@PathVariable String username, @RequestBody TodoDto todoDto) {
 
+        Todo todo = new Todo();
+        BeanUtils.copyProperties(todoDto, todo);
         todo.setUsername(username);
         Todo createdTodo = todoRepository.save(todo);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()

@@ -37,8 +37,8 @@ public class TodoController {
 
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
-        Todo todo = todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
-        todoRepository.deleteById(todo.getId());
+        Todo deletedTodo = todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
+        todoRepository.deleteById(deletedTodo.getId());
         return ResponseEntity.ok().build();
     }
 

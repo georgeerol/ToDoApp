@@ -46,6 +46,15 @@ class ToDoAppIntegrationTests {
 
     }
 
+    @Test
+    public void whenGetASpecificTodo_thenNotFound() {
+        String api = "http://localhost:" + port + "/users/georgeerol/todos/101";
+        Response response = given().port(port).auth().oauth2(token).get(api);
+        assertEquals(response.body().print(),"Todo not found");
+        assertEquals(HttpStatus.NOT_FOUND.value(), response.getStatusCode());
+
+    }
+
 
     @Test
     public void whenCreateANewTodo_thenCreated() {
@@ -79,6 +88,14 @@ class ToDoAppIntegrationTests {
         String api = "http://localhost:" + port + "/users/georgeerol/todos/10002";
         Response response = given().port(port).auth().oauth2(token).delete(api);
         assertEquals(HttpStatus.OK.value(),response.getStatusCode());
+    }
+
+    @Test
+    public void whenDelete_ThenNotFound(){
+        String api = "http://localhost:" + port + "/users/georgeerol/todos/102";
+        Response response = given().port(port).auth().oauth2(token).delete(api);
+        assertEquals(response.body().print(),"Todo not found");
+        assertEquals(HttpStatus.NOT_FOUND.value(), response.getStatusCode());
     }
 
     private Todo createRandomTodo() {

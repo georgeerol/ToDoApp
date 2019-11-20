@@ -35,8 +35,8 @@ public class TodoController {
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
 
-        todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
-        todoRepository.deleteById(id);
+        Todo todo = todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
+        todoRepository.deleteById(todo.getId());
         return ResponseEntity.ok().build();
     }
 
@@ -44,7 +44,7 @@ public class TodoController {
     @PutMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody TodoDto todoDto) {
         Todo todo = new Todo();
-        BeanUtils.copyProperties(todoDto,todo);
+        BeanUtils.copyProperties(todoDto, todo);
         todo.setUsername(username);
         Todo todoUpdated = todoRepository.save(todo);
         return new ResponseEntity<>(todoUpdated, HttpStatus.OK);

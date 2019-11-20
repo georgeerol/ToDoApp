@@ -2,6 +2,7 @@ package com.rest.todo.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Data
+@Component
 public class Todo {
     @Id
     @GeneratedValue

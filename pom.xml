@@ -152,7 +152,9 @@
                 <version>0.7.9</version>
                 <configuration>
                     <excludes>
+                        <exclude>**/com/rest/todo/jwt/**</exclude>
                         <exclude>**/com/rest/todo/model/**</exclude>
+                        <exclude>**/com/rest/todo/dto/**</exclude>
                         <exclude>**/com/rest/ToDoApp</exclude>
                     </excludes>
                 </configuration>
